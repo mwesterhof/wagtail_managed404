@@ -34,3 +34,11 @@ Now, the system should automatically track 404 responses. These will show up in 
 And they can be edited to supply a redirect for future requests:
 
 .. image:: images/entry_detail.png
+
+Entries in this list will be added automatically, but this behavior can be customized with the following setting::
+
+    # default
+    IGNORED_404S = [
+        r'^/static/',
+        r'^/favicon.ico'
+    ]
