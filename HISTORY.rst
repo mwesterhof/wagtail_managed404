@@ -1,6 +1,10 @@
 =======
 History
 =======
+0.1.2 (2018-10-02)
+------------------
+
+* Don't use parentalkey to refer to page from entry
 
 0.1.1 (2018-08-27)
 ------------------

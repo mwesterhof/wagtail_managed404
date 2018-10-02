@@ -1,5 +1,4 @@
 from django.db import models
-from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (
     FieldPanel, MultiFieldPanel, PageChooserPanel)
 from wagtail.core.models import Page, Site
@@ -11,7 +10,8 @@ class PageNotFoundEntry(models.Model):
 
     url = models.CharField(max_length=200)
     redirect_to_url = models.CharField(max_length=200, null=True, blank=True)
-    redirect_to_page = ParentalKey(Page, null=True, blank=True)
+    redirect_to_page = models.ForeignKey(
+        Page, on_delete=models.CASCADE, null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     last_hit = models.DateTimeField()
